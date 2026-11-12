@@ -1,0 +1,609 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCraft - Soluções em TI & Desenvolvimento Sob Encomenda</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0265d6',
+                            700: '#034ea2',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-border {
+            position: relative;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(129, 140, 248, 0.1));
+            padding: 1px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/20">
+                        <i class="fa-solid fa-code text-xl text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-white">Tech<span class="text-sky-400">Craft</span></span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                    <a href="#inicio" class="hover:text-sky-400 transition-colors">Início</a>
+                    <a href="#servicos" class="hover:text-sky-400 transition-colors">Serviços</a>
+                    <a href="#precos" class="hover:text-sky-400 transition-colors">Preços & Planos</a>
+                    <a href="#processo" class="hover:text-sky-400 transition-colors">Como Funciona</a>
+                    <a href="#diferenciais" class="hover:text-sky-400 transition-colors">Diferenciais</a>
+                </nav>
+
+                <!-- CTA Button Header -->
+                <div class="hidden md:flex items-center">
+                    <a href="#encomenda" class="px-5 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-medium text-sm transition-all shadow-md shadow-sky-500/25 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                        Fazer Encomenda
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Início</a>
+            <a href="#servicos" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Serviços</a>
+            <a href="#precos" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Preços & Planos</a>
+            <a href="#processo" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Como Funciona</a>
+            <a href="#diferenciais" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Diferenciais</a>
+            <a href="#encomenda" class="block px-3 py-2.5 rounded-md text-base font-medium bg-sky-500 text-white text-center shadow-md">Fazer Encomenda</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-6">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                    Engenharia de Software & Suporte Especializado
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                    Tecnologia sob medida para <span class="gradient-text">impulsionar seus resultados</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-400 mb-8 leading-relaxed">
+                    Manutenção preventiva e corretiva, suporte técnico de alta performance e desenvolvimento de softwares sob encomenda perfeitamente adaptados às suas necessidades.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#encomenda" class="px-8 py-4 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-semibold text-base shadow-lg shadow-sky-500/25 transition-all text-center flex items-center justify-center gap-3">
+                        <span>Iniciar Solicitação</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#servicos" class="px-8 py-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-semibold text-base transition-all text-center">
+                        Explorar Serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-20 bg-slate-900/50 relative border-t border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">Nossas Soluções</h2>
+                <p class="text-slate-400 text-base">Atendimento completo e especializado para resolver problemas operacionais e criar ferramentas exclusivas para seu negócio.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Serviço 1: Desenvolvimento Sob Encomenda -->
+                <div class="gradient-border group">
+                    <div class="bg-slate-950 p-8 rounded-[15px] h-full flex flex-col justify-between group-hover:bg-slate-900/80 transition-colors">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Softwares Sob Encomenda</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Criação de programas para desktop, sistemas internos e automações desenhadas exatamente de acordo com suas regras de negócio.
+                            </p>
+                            <ul class="space-y-2.5 text-xs text-slate-300">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-sky-400"></i> Sistemas de Gestão (ERP/CRM)
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-sky-400"></i> Automação de Tarefas e Processos
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-sky-400"></i> Softwares Desktop & Utilitários
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-8 mt-6 border-t border-slate-800/80">
+                            <a href="#encomenda" class="text-sky-400 hover:text-sky-300 text-sm font-semibold inline-flex items-center gap-2">
+                                Encomendar programa <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 2: Suporte Técnico Avançado -->
+                <div class="gradient-border group">
+                    <div class="bg-slate-950 p-8 rounded-[15px] h-full flex flex-col justify-between group-hover:bg-slate-900/80 transition-colors">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Suporte Técnico Especializado</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Assistência rápida e eficiente para solução de problemas em sistemas operacionais, redes, servidores e softwares corporativos.
+                            </p>
+                            <ul class="space-y-2.5 text-xs text-slate-300">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-indigo-400"></i> Suporte Remoto e Presencial
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-indigo-400"></i> Configuração de Redes e Servidores
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-indigo-400"></i> Diagnóstico e Resolução de Erros
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-8 mt-6 border-t border-slate-800/80">
+                            <a href="#encomenda" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold inline-flex items-center gap-2">
+                                Solicitar suporte <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 3: Manutenção de Computadores -->
+                <div class="gradient-border group">
+                    <div class="bg-slate-950 p-8 rounded-[15px] h-full flex flex-col justify-between group-hover:bg-slate-900/80 transition-colors">
+                        <div>
+                            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Manutenção de Hardware</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Serviços completos para garantir a longevidade e a máxima performance do seu parque computacional e estações de trabalho.
+                            </p>
+                            <ul class="space-y-2.5 text-xs text-slate-300">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400"></i> Manutenção Preventiva e Corretiva
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400"></i> Upgrades de Hardware (SSD, RAM, etc.)
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400"></i> Limpeza Técnica e Troca Térmica
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pt-8 mt-6 border-t border-slate-800/80">
+                            <a href="#encomenda" class="text-emerald-400 hover:text-emerald-300 text-sm font-semibold inline-flex items-center gap-2">
+                                Agendar manutenção <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabela de Preços e Valores Estima -->
+    <section id="precos" class="py-20 relative bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-4">
+                    <i class="fa-solid fa-tag"></i> Transparência & Valores
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">Planos e Estimativas de Investimento</h2>
+                <p class="text-slate-400 text-base">Valores transparentes para serviços pontuais e projetos sob medida.</p>
+            </div>
+
+            <!-- Grid de Preços de Serviços -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Card Manutenção -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Manutenção & Hardware</span>
+                        <h3 class="text-2xl font-bold text-white mt-4 mb-2">Manutenção Preventiva</h3>
+                        <p class="text-slate-400 text-xs mb-6">Limpeza interna completa, troca de pasta térmica e otimização do sistema.</p>
+                        <div class="mb-6">
+                            <span class="text-sm text-slate-400">A partir de</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-extrabold text-white">R$ 150</span>
+                                <span class="text-slate-400 text-sm">/ computador</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300 border-t border-slate-800 pt-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Desmontagem e higienização física</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Aplicação de pasta térmica premium</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Limpeza de sistema e remoção de vírus</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Diagnóstico de performance de hardware</li>
+                        </ul>
+                    </div>
+                    <a href="#encomenda" onclick="preselectService('manutencao')" class="mt-8 w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs text-center transition-all block">Solicitar Manutenção</a>
+                </div>
+
+                <!-- Card Suporte -->
+                <div class="bg-slate-900 border-2 border-sky-500/50 rounded-2xl p-8 flex flex-col justify-between relative shadow-xl shadow-sky-500/10">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-sky-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                        Mais Solicitado
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">Suporte Técnico</span>
+                        <h3 class="text-2xl font-bold text-white mt-4 mb-2">Suporte & Chamados</h3>
+                        <p class="text-slate-400 text-xs mb-6">Atendimento técnico remoto ou presencial para resolução rápida de falhas.</p>
+                        <div class="mb-6">
+                            <span class="text-sm text-slate-400">A partir de</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-extrabold text-white">R$ 120</span>
+                                <span class="text-slate-400 text-sm">/ hora ou chamado</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300 border-t border-slate-800 pt-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Diagnóstico imediato via suporte remoto</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Configuração de impressoras e redes</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Instalação e reparo de softwares</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Recuperação e backup de arquivos</li>
+                        </ul>
+                    </div>
+                    <a href="#encomenda" onclick="preselectService('suporte')" class="mt-8 w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-medium text-xs text-center transition-all block shadow-md shadow-sky-500/20">Abrir Chamado</a>
+                </div>
+
+                <!-- Card Softwares Sob Encomenda -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-slate-700 transition-all">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Desenvolvimento</span>
+                        <h3 class="text-2xl font-bold text-white mt-4 mb-2">Software Sob Encomenda</h3>
+                        <p class="text-slate-400 text-xs mb-6">Sistemas completos desenvolvidos de acordo com suas necessidades específicas.</p>
+                        <div class="mb-6">
+                            <span class="text-sm text-slate-400">Projetos a partir de</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-extrabold text-white">R$ 1.200</span>
+                                <span class="text-slate-400 text-sm">/ projeto</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300 border-t border-slate-800 pt-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Desenvolvimento 100% sob medida</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Automação de processos repetitivos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Banco de dados local ou na nuvem</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Código-fonte e suporte pós-entrega</li>
+                        </ul>
+                    </div>
+                    <a href="#encomenda" onclick="preselectService('desenvolvimento')" class="mt-8 w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs text-center transition-all block">Solicitar Orçamento</a>
+                </div>
+            </div>
+
+            <!-- Nota Explicativa -->
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-center text-xs text-slate-400 max-w-3xl mx-auto">
+                <i class="fa-solid fa-circle-info text-sky-400 mr-1"></i>
+                Os valores informados são estimativas iniciais e podem variar de acordo com a complexidade técnica, prazo de entrega e urgência informados na encomenda.
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona / Processo -->
+    <section id="processo" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">Como Funciona o Atendimento</h2>
+                <p class="text-slate-400 text-base">Um processo simples, ágil e transparente desde o primeiro contato até a entrega final.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800 relative">
+                    <span class="text-4xl font-extrabold text-slate-800 absolute top-4 right-4">01</span>
+                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold mb-4">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">1. Envio do Pedido</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Você preenche o formulário detalhando sua necessidade ou ideia de software.</p>
+                </div>
+
+                <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800 relative">
+                    <span class="text-4xl font-extrabold text-slate-800 absolute top-4 right-4">02</span>
+                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold mb-4">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">2. Análise & Orçamento</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Nossa equipe analisa os requisitos e envia a proposta com prazos e valores por e-mail.</p>
+                </div>
+
+                <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800 relative">
+                    <span class="text-4xl font-extrabold text-slate-800 absolute top-4 right-4">03</span>
+                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold mb-4">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">3. Execução</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Iniciamos o desenvolvimento ou o serviço de suporte/manutenção agendado.</p>
+                </div>
+
+                <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800 relative">
+                    <span class="text-4xl font-extrabold text-slate-800 absolute top-4 right-4">04</span>
+                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold mb-4">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">4. Entrega & Validação</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Entregamos o sistema testado ou o equipamento pronto com garantia dos serviços.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Encomenda Principal -->
+    <section id="encomenda" class="py-20 bg-slate-900/30 border-t border-slate-800/80 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-4">
+                    <i class="fa-solid fa-paper-plane"></i> Formuário Direto
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">Faça sua Encomenda ou Solicitação</h2>
+                <p class="text-slate-400 text-base">Preencha as informações abaixo. Responderemos com um orçamento detalhado em até 24 horas úteis no seu e-mail.</p>
+            </div>
+
+            <!-- Card do Formulário -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-2xl relative">
+                
+                <!-- Feedback Msg Box (Invisível por padrão) -->
+                <div id="form-feedback" class="hidden mb-6 p-4 rounded-xl border text-sm flex items-start gap-3">
+                    <i id="feedback-icon" class="text-lg mt-0.5"></i>
+                    <div>
+                        <h5 id="feedback-title" class="font-semibold"></h5>
+                        <p id="feedback-message" class="text-xs mt-1"></p>
+                    </div>
+                </div>
+
+                <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-6">
+                    <!-- Nome e Email -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nome Completo *</label>
+                            <input type="text" id="name" required placeholder="Seu nome ou nome da empresa" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">E-mail para Contato *</label>
+                            <input type="email" id="email" required placeholder="seu@email.com" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all">
+                        </div>
+                    </div>
+
+                    <!-- Telefone e Tipo de Serviço -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="phone" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Telefone de Contato (Com DDD) *</label>
+                            <input type="tel" id="phone" required placeholder="(00) 00000-0000" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all">
+                        </div>
+                        <div>
+                            <label for="service_type" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Tipo de Serviço *</label>
+                            <select id="service_type" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all">
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="desenvolvimento">Desenvolvimento de Software Sob Encomenda</option>
+                                <option value="suporte">Suporte Técnico Especializado</option>
+                                <option value="manutencao">Manutenção / Upgrade de Computadores</option>
+                                <option value="consultoria">Consultoria em Tecnologia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Urgência -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nível de Urgência</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <label class="cursor-pointer border border-slate-800 bg-slate-950 rounded-lg p-3 text-center text-xs text-slate-400 hover:border-slate-700 flex items-center justify-center gap-2">
+                                <input type="radio" name="urgency" value="baixa" checked class="text-sky-500 focus:ring-0">
+                                Normal
+                            </label>
+                            <label class="cursor-pointer border border-slate-800 bg-slate-950 rounded-lg p-3 text-center text-xs text-slate-400 hover:border-slate-700 flex items-center justify-center gap-2">
+                                <input type="radio" name="urgency" value="media" class="text-sky-500 focus:ring-0">
+                                Média
+                            </label>
+                            <label class="cursor-pointer border border-slate-800 bg-slate-950 rounded-lg p-3 text-center text-xs text-slate-400 hover:border-slate-700 flex items-center justify-center gap-2">
+                                <input type="radio" name="urgency" value="alta" class="text-sky-500 focus:ring-0">
+                                Alta / Urgente
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Descrição do Pedido -->
+                    <div>
+                        <label for="description" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Descrição Detalhada da Solicitação *</label>
+                        <textarea id="description" rows="5" required placeholder="Descreva os requisitos do programa que precisa ou detalhe o defeito/suporte técnico que necessita..." class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-all resize-none"></textarea>
+                    </div>
+
+                    <!-- Botão de Envio -->
+                    <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-semibold text-base transition-all shadow-lg shadow-sky-500/25 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Enviar Pedido de Encomenda</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Sofisticado Sem Redes Sociais ou Whatsapp -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Marca -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-code text-sm"></i>
+                        </div>
+                        <span class="text-lg font-bold text-white tracking-tight">Tech<span class="text-sky-400">Craft</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                        Excelência em suporte de TI, manutenção preventiva e criação de sistemas sob medida para otimizar suas rotinas diárias.
+                    </p>
+                </div>
+
+                <!-- Compromisso -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Atendimento Direto</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                        Trabalhamos com foco total na privacidade e agilidade via canal oficial de encomendas integradas.
+                    </p>
+                    <div class="inline-flex items-center gap-2 text-xs text-sky-400">
+                        <i class="fa-solid fa-shield-halved"></i> Seus dados estão seguros conosco
+                    </div>
+                </div>
+
+                <!-- Horário de Atendimento -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Horário de Operação</h4>
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li class="flex justify-between border-b border-slate-800/60 pb-1">
+                            <span>Segunda - Sexta:</span>
+                            <span class="text-slate-200">08:00 - 18:00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-slate-800/60 pb-1">
+                            <span>Sábado:</span>
+                            <span class="text-slate-200">09:00 - 13:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Domingo e Feriados:</span>
+                            <span class="text-slate-400">Fechado</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-400">
+                <p>&copy; <span id="year"></span> TechCraft Solutions. Todos os direitos reservados. Atendimento via portal de encomendas do site.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JS para interatividade e envio do formulário -->
+    <script>
+        // Atualiza ano no footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Função para pré-selecionar o serviço no formulário ao clicar nos cards de preço
+        function preselectService(serviceValue) {
+            const selectElement = document.getElementById('service_type');
+            if (selectElement) {
+                selectElement.value = serviceValue;
+            }
+        }
+
+        // Menu Mobile Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Manipulação do Formulário de Encomenda
+        function handleOrderSubmit(event) {
+            event.preventDefault();
+
+            const submitBtn = document.getElementById('submit-btn');
+            const feedbackBox = document.getElementById('form-feedback');
+            const feedbackIcon = document.getElementById('feedback-icon');
+            const feedbackTitle = document.getElementById('feedback-title');
+            const feedbackMessage = document.getElementById('feedback-message');
+
+            // Capturar dados do formulário
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const serviceType = document.getElementById('service_type').value;
+            const description = document.getElementById('description').value;
+
+            // Simular estado de carregamento do botão
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Processing Request...';
+
+            setTimeout(() => {
+                // Sucesso na simulação de envio
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar Pedido de Encomenda';
+
+                // Mostrar mensagem de sucesso (sem usar alert)
+                feedbackBox.classList.remove('hidden', 'bg-red-500/10', 'border-red-500/30', 'text-red-300');
+                feedbackBox.classList.add('bg-emerald-500/10', 'border-emerald-500/30', 'text-emerald-300');
+                
+                feedbackIcon.className = 'fa-solid fa-circle-check text-emerald-400 text-lg mt-0.5';
+                feedbackTitle.textContent = 'Pedido Enviado com Sucesso!';
+                feedbackMessage.textContent = `Obrigado, ${name}! Recebemos sua solicitação de "${serviceType}". Enviaremos um retorno para o e-mail (${email}) em breve.`;
+
+                // Scroll suave até a mensagem de feedback
+                feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Resetar formulário
+                document.getElementById('orderForm').reset();
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
+```
